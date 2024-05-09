@@ -11,5 +11,11 @@
   "license": "ISC",
   "devDependencies": {
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@types/node": "^20.12.11",
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "prompt-sync": "^4.2.0"
   }
 }
