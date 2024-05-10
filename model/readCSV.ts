@@ -1,4 +1,4 @@
-import { Item } from './interfaceItem.js.js';
+import { Item } from './interfaceItem';
 import fs from 'fs';
 import csv from 'csv-parser';
 

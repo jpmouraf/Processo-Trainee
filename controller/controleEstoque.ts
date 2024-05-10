@@ -1,9 +1,10 @@
-import { Item } from '../model/interfaceItem.js';
-import estoqueService from '../service/estoqueService.js';
+import { Item } from '../model/interfaceItem';
+import estoqueService from '../service/estoqueService';
+
+const estoque = new estoqueService();
 
 export async function adicionarProdutos(data: Item) {
-    try {
-        const estoque = new estoqueService(); 
+    try { 
         await estoque.criar(data); 
         console.log('Produto adicionado com sucesso!');
     } 
@@ -14,7 +15,6 @@ export async function adicionarProdutos(data: Item) {
 
 export async function removerProdutos(nome: string) {
     try {
-        const estoque = new estoqueService();
         await estoque.remover(nome);
         console.log('Produto removido com sucesso!');
     }
@@ -23,10 +23,9 @@ export async function removerProdutos(nome: string) {
     }
 }
 
-export async function listarItens(data: Item) {
+export async function listarItens() {
     try {
-        const estoque = new estoqueService();
-        await estoque.listar(data); 
+        await estoque.listar(); 
         console.log('Itens listados com sucesso!');
     }
     catch(error) {
@@ -34,60 +33,54 @@ export async function listarItens(data: Item) {
     }
 }
 
-export async function somarValorItens(data: Item) {
+export async function somarValorItens() {
     try {
-        const estoque = new estoqueService();
-        await estoque.valorTotal(data);
+        await estoque.valorTotal();
     }
     catch(error) {
         console.log('Erro ao somar valor total dos itens:', error);
     }
 }
 
-export async function somarPesoItens(data: Item) {
+export async function somarPesoItens() {
     try {
-        const estoque = new estoqueService();
-        await estoque.pesoTotal(data);
+        await estoque.pesoTotal();
     }
     catch(error) {
         console.log('Erro ao somar peso total dos itens:', error);
     }
 }
 
-export async function mediaValorItens(data: Item) {
+export async function mediaValorItens() {
     try {
-        const estoque = new estoqueService();
-        await estoque.valorMedio(data);
+        await estoque.valorMedio();
     }
     catch(error) {
         console.log('Erro ao calcular média de valor dos itens:', error);
     }
 }
 
-export async function mediaPesoItens(data: Item) {
+export async function mediaPesoItens() {
     try {
-        const estoque = new estoqueService();
-        await estoque.pesoMedio(data);
+        await estoque.pesoMedio();
     }
     catch(error) {
         console.log('Erro ao calcular média de peso dos itens:', error);
     }
 }
 
-export async function quantidadeTotalItens(data: Item) {
+export async function quantidadeTotalItens() {
     try {
-        const estoque = new estoqueService();
-        await estoque.quantidadeItens(data);
+        await estoque.quantidadeItens();
     }
     catch(error) {
         console.log('Erro ao calcular quantidade total dos itens:', error);
     }
 }
 
-export async function quantidadeTotalProdutos(data: Item) {
+export async function quantidadeTotalProdutos() {
     try {
-        const estoque = new estoqueService();
-        await estoque.quantidadeProdutos(data);
+        await estoque.quantidadeProdutos();
     }
     catch(error) {
         console.log('Erro ao calcular quantidade total de produtos:', error);

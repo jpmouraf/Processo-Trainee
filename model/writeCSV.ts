@@ -1,4 +1,4 @@
-import { Item } from './interfaceItem.js.js';
+import { Item } from './interfaceItem';
 import fs from 'fs';
 import csv from 'csv-parser';
 
@@ -8,10 +8,10 @@ export const writeCSV = async (filePath: string, data: Item[]): Promise<void> =>
   const csvWriter = createCsvWriter({
     path: filePath,
     header: [
-      { id: 'nome', title: 'NOME' },
-      { id: 'peso', title: 'PESO' },
-      { id: 'valor', title: 'VALOR' },
-      { id: 'quantidade', title: 'QUANTIDADE' },
+      { id: 'nome', title: 'nome' },
+      { id: 'peso', title: 'peso' },
+      { id: 'valor', title: 'valor' },
+      { id: 'quantidade', title: 'quantidade' },
     ],
   });
 
